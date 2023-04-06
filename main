@@ -1,20 +1,23 @@
 <!doctype html>
 <html>
 <head>
-<title>ChipotlebyMamaDeals</title>
+<!--<meta http-equiv="refresh" content="0; url=sms:888222;?&body=CODE"/>-->
+<title>CHIPOTLE CODES</title>
 </head>
-<body>
-<h3>Enter your code:</h3>
-<input type="text" id="codeInput">
-<button onclick="sendSMS()">Send SMS</button>
+<body onload="outputCode()">
+<p>
+<a id="redirect" href="sms:888222;?&body=CODE"></a>
+
 <script>
-function sendSMS() {
-  var url = new URL(window.location.href);
-  var code = url.searchParams.get("c");
-  if (code) {
-    window.location.href = "sms:888222?body=" + code;
-  }
+function outputCode() {
+var url = new URL(window.location.href);
+var code = url.searchParams.get("c");
+console.log(code);
+document.getElementById("redirect").href = "sms:888222;?&body=" + code;
+document.getElementById('redirect').click();
 }
 </script>
+</p>
 </body>
 </html>
+
