@@ -10,7 +10,7 @@
 <script>
 function sendSMS() {
   var url = new URL(window.location.href);
-  var code = url.searchParams.get("C");
+  var code = url.searchParams.get("c");
   if (code) {
     window.location.href = "sms:888222?body=" + code;
   }
@@ -18,4 +18,3 @@ function sendSMS() {
 </script>
 </body>
 </html>
-
