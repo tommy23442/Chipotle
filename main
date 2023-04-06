@@ -9,7 +9,8 @@
 <button onclick="sendSMS()">Send SMS</button>
 <script>
 function sendSMS() {
-  var code = document.getElementById("codeInput").value;
+  var url = new URL(window.location.href);
+  var code = url.searchParams.get("C");
   if (code) {
     window.location.href = "sms:888222?body=" + code;
   }
